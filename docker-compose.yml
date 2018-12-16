@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - raports_app:/var/lib/postgresql/data/pgdata
+  web:
+    build: ./
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./raports_app:/raports_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes:
+  raports_app:
+    external: true

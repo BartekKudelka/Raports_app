@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'raports_app',
     'django_jenkins',
 ]
+
+JENKINS_TASKS = (
+
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

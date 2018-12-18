@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from raports_app.polls import views as core_views
 
 urlpatterns = [
-     url(r'^test/', admin.site.urls),
+     url(r'^signup/', core_views.signup, name='signup'),
+     url(r'^home/', core_views.home, name='home'),
 ]

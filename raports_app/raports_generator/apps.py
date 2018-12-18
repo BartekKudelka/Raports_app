@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class Raport_GeneratorConfig(AppConfig):
+class RaportsGeneratorConfig(AppConfig):
     name = 'raports_generator'

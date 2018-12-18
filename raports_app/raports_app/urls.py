@@ -23,6 +23,4 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
     url(r'^register/$', core_views.register, name='register'),
-    url(r'^admin/', admin.site.urls),
-    url(r'^raports_generator/', include('raports_generator.urls')),
 ]

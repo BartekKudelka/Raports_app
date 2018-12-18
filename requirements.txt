@@ -1,4 +1,4 @@
-django
+django==1.10.4
 psycopg2
 django-jenkins
 pylint

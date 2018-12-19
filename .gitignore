@@ -1,1 +1,8 @@
+*.egg-info
+*.pot
+*.py[co]
+.tox/
+__pycache__
+build/
 .idea
+.idea/**

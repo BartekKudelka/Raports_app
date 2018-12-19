@@ -17,7 +17,7 @@ class Report(models.Model):
 
 
 
-class Client (models.Model):
+class Client(models.Model):
     id_client = models.IntegerField(null=True)
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
@@ -25,16 +25,16 @@ class Client (models.Model):
     email = models.CharField(max_length=50)
     id_company = models.IntegerField(null=True)
 
-    def addClienta(self):
+    def addClient(self):
         return
 
-    def deleteKlienta(self):
+    def deleteClient(self):
         return
 
     def changeData(self):
         return
 
-class Product (models.Model):
+class Product(models.Model):
     id_product = models.IntegerField(null=True)
     name = models.CharField(max_length=100)
     price = models.FloatField(null=True)
@@ -52,7 +52,7 @@ class Product (models.Model):
         return
 
 
-class Purchase (models.Model):
+class Purchase(models.Model):
     id_purchase = models.IntegerField(null=True)
     id_product = models.IntegerField(null=True)
     quantity = models.IntegerField(null=True)
@@ -64,5 +64,7 @@ class Purchase (models.Model):
 
 
     def deletePurchase(self):
-
         return
+
+class Invoice(models.Model):
+    invoice_id = models.IntegerField(null=True)

@@ -31,8 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'account',
-    'raports_generator.apps.Raport_GeneratorConfig',
+    #'raports_generator.apps.Raports_GeneratorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

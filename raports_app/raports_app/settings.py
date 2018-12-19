@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
     'raports_generator.apps.Raport_GeneratorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +49,7 @@ JENKINS_TASKS = (
 )
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

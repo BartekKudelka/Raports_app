@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Report(models.Model):
+    report_id = models.IntegerField(null=True)
     invoice_id = models.IntegerField(null=True)
     date_of_generation = models.DateField(null=True)
 
@@ -17,7 +18,6 @@ class Report(models.Model):
 
 
 class Client(models.Model):
-    client_id = models.IntegerField(null=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=30)
@@ -30,12 +30,9 @@ class Client(models.Model):
     def deleteClient(self):
         return
 
-    def changeData(self):
-        return
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-
 
     def addProduct(self):
 
@@ -44,15 +41,11 @@ class Product(models.Model):
     def deleteProduct(self):
         return
 
-    def changeData(self):
-        return
-
 
 class Purchase(models.Model):
-    product_id = models.IntegerField(null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=True)
     purchase_value = models.FloatField(null=True)
-
 
     def addPurchase(self):
         return
@@ -61,8 +54,9 @@ class Purchase(models.Model):
     def deletePurchase(self):
         return
 
+
 class Invoice(models.Model):
-    invoice_id = models.IntegerField(null=True)
+    purchase = models.ForeignKey(Purchase, on_delete = models.CASCADE)
 
 
 class User(models.Model):
@@ -70,8 +64,27 @@ class User(models.Model):
     email = models.CharField(max_length = 50)
     password = models.CharField(max_length=20)
 
-    def addUser(self):
+    def login(self):
         return
 
-    def deleteUser(self):
+    def logout(self):
+        return
+
+    def register(self):
+        return
+
+
+class Report(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    invoice = models.ForeignKey(Invoice, on_delete = models.CASCADE)
+    start_date = models.DateField(null=True)
+    end_date = models.DateField(null=True)
+
+    def addReport(self):
+        return
+
+    def editChart(self):
+        return
+
+    def deleteTable(self):
         return

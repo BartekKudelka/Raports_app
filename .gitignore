@@ -4,5 +4,5 @@
 .tox/
 __pycache__
 build/
-.idea
+.idea/
 .idea/**

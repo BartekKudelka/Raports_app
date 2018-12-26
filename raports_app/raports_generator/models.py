@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Report(models.Model):
-    id_report = models.IntegerField(null=True)
-    id_invoice = models.IntegerField(null=True)
-    data_wygenerowania = models.DateField(null=True)
+    report_id = models.IntegerField(null=True)
+    invoice_id = models.IntegerField(null=True)
+    date_of_generation = models.DateField(null=True)
 
     def getReport(self):
         return
@@ -18,12 +18,12 @@ class Report(models.Model):
 
 
 class Client(models.Model):
-    id_client = models.IntegerField(null=True)
+    client_id = models.IntegerField(null=True)
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
     phone_nr = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
-    id_company = models.IntegerField(null=True)
+    company_id = models.IntegerField(null=True)
 
     def addClient(self):
         return
@@ -35,7 +35,7 @@ class Client(models.Model):
         return
 
 class Product(models.Model):
-    id_product = models.IntegerField(null=True)
+    product_id = models.IntegerField(null=True)
     name = models.CharField(max_length=100)
     price = models.FloatField(null=True)
     producer = models.CharField(max_length=100)
@@ -53,8 +53,8 @@ class Product(models.Model):
 
 
 class Purchase(models.Model):
-    id_purchase = models.IntegerField(null=True)
-    id_product = models.IntegerField(null=True)
+    purchase_id = models.IntegerField(null=True)
+    product_id = models.IntegerField(null=True)
     quantity = models.IntegerField(null=True)
     purchase_value = models.FloatField(null=True)
 
@@ -68,3 +68,17 @@ class Purchase(models.Model):
 
 class Invoice(models.Model):
     invoice_id = models.IntegerField(null=True)
+
+
+class User(models.Model):
+    user_id = models.IntegerField(null=True)
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=30)
+    email = models.CharField(max_length = 50)
+    password = models.CharField(max_length=20)
+
+    def addUser(self):
+        return
+
+    def deleteUser(self):
+        return

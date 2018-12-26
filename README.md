@@ -5,6 +5,9 @@
 
 1. sudo docker-compose up
 
+## Generating faker data
+    sudo docker-compose run web python reports_faker.py
+
 
 
 ## Useful commands

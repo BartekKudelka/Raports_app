@@ -3,14 +3,14 @@ import os, django, random
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "raports_app.settings")
 django.setup()
 
-from raports_generator.models import Client, Purchase, Product, Report, Invoice, User
+from raports_generator.models import Client, InvoiceItem, Product, Report, Invoice, User
 from faker import Faker
 
 fakegen = Faker('pl_PL')
 
 
-def add_invoice():
-    i = Invoice.objects.get_or_create()[0]
+def add_invoice_item():
+    i = InvoiceItem.objects.get_or_create()[0]
     i.save()
     return i
 

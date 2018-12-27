@@ -66,7 +66,7 @@ class Report(models.Model):
 class Invoice(models.Model):
     client = models.ForeignKey(Client)
     date_of_issue = models.DateField()
-    reports = models.ManyToManyField(Report, null=True)
+    reports = models.ManyToManyField(Report)
 
 
 class InvoiceItem(models.Model):

@@ -14,6 +14,8 @@ class Client(models.Model):
     def deleteClient(self):
         return
 
+    def __str__(self):
+        return self.first_name + " " + self.last_name
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -24,6 +26,8 @@ class Product(models.Model):
     def deleteProduct(self):
         return
 
+    def __str__(self):
+        return self.name
 
 class User(models.Model):
     email = models.CharField(max_length=50)
@@ -40,9 +44,15 @@ class User(models.Model):
         return
 
 
+class Invoice(models.Model):
+    client = models.ForeignKey(Client)
+    date_of_issue = models.DateField()
+
+
 class Report(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
+    reports = models.ManyToManyField(Invoice)
 
     def addReport(self):
         return
@@ -63,12 +73,6 @@ class Report(models.Model):
         return
 
 
-class Invoice(models.Model):
-    client = models.ForeignKey(Client)
-    date_of_issue = models.DateField()
-    reports = models.ManyToManyField(Report)
-
-
 class InvoiceItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
@@ -80,3 +84,6 @@ class InvoiceItem(models.Model):
 
     def deletePurchase(self):
         return
+
+    def __str__(self):
+        return str(self.product) + " " + str(self.quantity) + " szt"

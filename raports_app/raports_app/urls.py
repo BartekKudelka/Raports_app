@@ -23,9 +23,9 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^raports_generator/', include('raports_generator.urls')),
-    url(r'^$', views.home),
-    url(r'^sign_up/', views.sign_up),
+    url(r'^$', views.home, name='home'),
+    url(r'^sign_up/', views.sign_up, name="sign_up"),
 
-    url(r'^login/', views.login),
+    url(r'^login/', views.login, name="login"),
     url(r'^logout/', views.logout),
 ]

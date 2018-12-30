@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>New Report</title>
+<title>Text Report</title>
 {% endblock %}
 
 {% block body %}
-    <h3>Text Report</h3>
+<h3>Text Report</h3>
+{{report.start_date}}
+{{report.end_date}}
+
+<ul>
+    {% for invoice in report.invoices.all %}
+    <li>{{invoice.invoice_item.get.product}}: {{invoice.invoice_item.get.quantity}} pieces</li>
+    {% endfor %}
+</ul>
 {% endblock %}

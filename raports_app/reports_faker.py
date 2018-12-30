@@ -3,7 +3,7 @@ import os, django, random
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "raports_app.settings")
 django.setup()
 
-from raports_generator.models import Client, InvoiceItem, Product, Report, Invoice, User
+from raports_generator.models import Client, InvoiceItem, Product, Report, Invoice
 from faker import Faker
 
 fakegen = Faker('pl_PL')
@@ -35,15 +35,6 @@ def add_invoice_item(product, invoice):
     return i
 
 
-def add_user():
-    u = User.objects.get_or_create(
-        password='zaq1@WSX',
-        email=fakegen.name()
-    )[0]
-    u.save()
-    return u
-
-
 def add_product():
     p = Product.objects.get_or_create(
         name=fakegen.text()
@@ -72,8 +63,6 @@ def populate(N=20):
     for entry in range(N):
         product = add_product()
         client = add_client()
-
-        # user = add_user()
         #report = add_report()
 
         invoice = add_invoice(client)

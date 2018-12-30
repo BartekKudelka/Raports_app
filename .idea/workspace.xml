@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee3ebed-ed42-4228-85f2-0ffa122ed21d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/raports_app/raports_app/templates/logged_out.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/polls/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/polls/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/polls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/polls/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_generator/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raports_app/reports_faker.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/reports_faker.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,29 +72,29 @@
     <session id="-637023675">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="17" />
-          <entry key="py" value="44" />
+          <entry key="html" value="21" />
+          <entry key="py" value="50" />
           <entry key="sqlite3" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="17" />
+          <entry key="HTML" value="21" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="44" />
+          <entry key="Python" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="97" />
-          <entry key="html" value="874" />
-          <entry key="py" value="1930" />
+          <entry key="html" value="1123" />
+          <entry key="py" value="2781" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="874" />
-          <entry key="Python" value="2027" />
+          <entry key="HTML" value="1123" />
+          <entry key="Python" value="2878" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -116,155 +110,93 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50563383">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="9" selection-start-line="9" selection-end-line="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-                  <folding>
-                    <element signature="e#0#59#0" expanded="true" />
-                    <marker date="1546030307989" expanded="true" signature="179:180" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="433">
-                  <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#0#65#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/register.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/polls/forms.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#645#686#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/logged_out.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/home.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" lean-forward="true" selection-end-line="12" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/signup.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/login.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" selection-start-line="17" selection-end-line="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/base.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="365">
-                  <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/signup.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+                <marker date="1546188737266" expanded="true" signature="286:287" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_app/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="59" lean-forward="true" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
+              <folding>
+                <element signature="e#645#686#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/reports_faker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <marker date="1546179001931" expanded="true" signature="267:338" ph="..." />
+                <marker date="1546179001931" expanded="true" signature="580:1227" ph="..." />
+                <marker date="1546179001931" expanded="true" signature="811:813" ph="..." />
+                <marker date="1546179001931" expanded="true" signature="953:1227" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -305,18 +237,10 @@
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/logout.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/polls/admin.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_generator/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/admin.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/polls/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_generator/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/raports.html" />
-        <option value="$PROJECT_DIR$/raports_app/reports_faker.py" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/new_report.html" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/urls.py" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/models.py" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html" />
-        <option value="$PROJECT_DIR$/raports_app/raports_generator/views.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/polls/views.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/login.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/register.html" />
@@ -325,8 +249,16 @@
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/base.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/settings.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/logged_out.html" />
-        <option value="$PROJECT_DIR$/raports_app/raports_app/views.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/urls.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/admin.py" />
+        <option value="$PROJECT_DIR$/raports_app/reports_faker.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_app/views.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/models.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/urls.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/views.py" />
+        <option value="$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html" />
       </list>
     </option>
   </component>
@@ -336,11 +268,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-140" />
-    <option name="y" value="113" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="163" />
+    <option name="y" value="238" />
     <option name="width" value="1417" />
-    <option name="height" value="996" />
+    <option name="height" value="739" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -452,11 +384,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="163" y="238" width="1417" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.765" visible="true" weight="0.13202934" />
-      <window_info id="Structure" order="1" sideWeight="0.235" side_tool="true" visible="true" weight="0.13202934" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7635783" visible="true" weight="0.15917465" />
+      <window_info id="Structure" order="1" sideWeight="0.23642172" side_tool="true" weight="0.15917465" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32922733" />
@@ -468,8 +400,8 @@
       <window_info anchor="bottom" id="Docker" order="7" weight="0.3298611" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.4983165" weight="0.3298611" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.48533008" side_tool="true" visible="true" weight="0.3281075" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.51466995" visible="true" weight="0.3281075" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.48563007" side_tool="true" weight="0.48349836" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5143699" weight="0.48349836" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.506734" weight="0.2799552" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.5152812" weight="0.387458" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -479,11 +411,11 @@
       <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29338843" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7635783" visible="true" weight="0.15917465" />
+      <window_info id="Structure" order="1" sideWeight="0.23642172" side_tool="true" visible="true" weight="0.15917465" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32922733" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -492,10 +424,10 @@
       <window_info anchor="bottom" id="Docker" order="7" weight="0.3298611" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.4983165" weight="0.3298611" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016835" side_tool="true" weight="0.3298611" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.496633" visible="true" weight="0.27314815" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4983165" weight="0.3298611" />
-      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.5378788" weight="0.3298611" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.48563007" side_tool="true" visible="true" weight="0.48349836" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5143699" visible="true" weight="0.48349836" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.506734" weight="0.2799552" />
+      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.5152812" weight="0.387458" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -584,13 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/migrations/0001_initial.py" />
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/polls/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -611,38 +536,10 @@
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/polls/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/create_report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/reports_faker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -653,42 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <marker date="1546030307989" expanded="true" signature="179:180" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/polls/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -709,24 +574,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -751,23 +602,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_app/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="65" lean-forward="true" selection-start-column="65" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="93" selection-start-line="8" selection-start-column="93" selection-end-line="8" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="13" column="59" lean-forward="true" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
           <folding>
             <element signature="e#645#686#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/reports_faker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <marker date="1546179001931" expanded="true" signature="267:338" ph="..." />
+            <marker date="1546179001931" expanded="true" signature="580:1227" ph="..." />
+            <marker date="1546179001931" expanded="true" signature="811:813" ph="..." />
+            <marker date="1546179001931" expanded="true" signature="953:1227" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <marker date="1546188737266" expanded="true" signature="286:287" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/visual_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/templates/text_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
         </state>
       </provider>
     </entry>

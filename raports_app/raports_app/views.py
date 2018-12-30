@@ -1,14 +1,10 @@
 from django.contrib.auth import login as auth_login, authenticate
 from django.shortcuts import render, redirect
-from raports_generator.models import User
 from raports_app.polls.forms import SignUpForm
 
 
-
 def home(request):
-    users = User.objects.all()
-    args = {'users': users}
-    return render(request, 'home.html', args)
+    return render(request, 'home.html')
 
 
 def sign_up(request):
@@ -24,6 +20,7 @@ def sign_up(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
 
 def logged_out(request):
     return render(request, 'logged_out.html')

@@ -31,21 +31,6 @@ class Product(models.Model):
         return self.name
 
 
-class User(models.Model):
-    email = models.CharField(max_length=50)
-    password = models.CharField(max_length=20)
-    login = models.CharField(max_length=20)
-
-    def login(self):
-        return
-
-    def logout(self):
-        return
-
-    def register(self):
-        return
-
-
 class Invoice(models.Model):
     client = models.ForeignKey(Client)
     date_of_issue = models.DateField()
@@ -57,7 +42,7 @@ class Invoice(models.Model):
 class Report(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
-    reports = models.ManyToManyField(Invoice)
+    invoices = models.ManyToManyField(Invoice, related_name="reports")
 
     def addReport(self):
         return
@@ -82,7 +67,7 @@ class InvoiceItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
-    invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE)
+    invoice = models.ForeignKey(Invoice, related_name="invoice_item", on_delete=models.CASCADE)
 
     def addPurchase(self):
         return

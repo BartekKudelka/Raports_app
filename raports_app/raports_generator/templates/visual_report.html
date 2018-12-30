@@ -5,12 +5,22 @@
 {% endblock %}
 
 {% block body %}
-<h1>|{{ report.reports }}|</h1>
 <h3>Visual Report</h3>
 {{report.start_date}}
 {{report.end_date}}
-<!--<pre>{{ report.invoice }}</pre>-->
 
+<ul>
+    {% for invoice in report.invoices.all %}
+    <li>{{invoice.invoice_item.get.product}}</li>
+    {% endfor %}
+</ul>
 
-
+{{obj}}
+<hr>
+{{chart}}
+  <div id="container"></div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+  Highcharts.chart('container', {{ chart|safe }});
+</script>
 {% endblock %}

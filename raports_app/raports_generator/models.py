@@ -17,6 +17,7 @@ class Client(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
 
@@ -28,6 +29,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class User(models.Model):
     email = models.CharField(max_length=50)
@@ -47,6 +49,9 @@ class User(models.Model):
 class Invoice(models.Model):
     client = models.ForeignKey(Client)
     date_of_issue = models.DateField()
+
+    def __str__(self):
+        return str(self.date_of_issue)
 
 
 class Report(models.Model):

@@ -1,21 +1,36 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+{% block body %}
+<div class="row justify-content-center">
+
+    <div class="card">
+        <header class="card-header">
+            <h4 class="card-title mt-2 text-center">Sign up</h4>
+        </header>
+         <article class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="col form-group">
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Register</button>
+            </div> <!-- form-group// -->
+            <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+                Terms of use and Privacy Policy.
+            </small>
+        </form>
+         </article>
+        <div class="border-top card-body text-center">Have an account? <a href="/login">Log In</a></div>
+    </div>
+</div>
 {% endblock %}

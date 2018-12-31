@@ -36,11 +36,11 @@ def add_invoice_item(product, invoice):
 
 
 def add_product():
-    pruducts = ['sugar','eggs','yoghurt','margarine','butter','flour','milk', 'oil', 'baking powder', 'rice', 'cheese',
+    pruducts = ['sugar', 'eggs', 'yoghurt', 'margarine', 'butter','flour', 'milk', 'oil', 'baking powder', 'rice', 'cheese',
                 'mild cheese', 'full fat cheese', 'cream cheese', 'cream', 'fat', 'egg yolk', 'sparkling', 'mineral water',
                 'drink', 'chips', 'broth', 'soup', 'scrambled eggs', 'boiled eggs', 'fried eggs', 'sausage'
                 'apple', 'pear', 'peach', 'omelette', 'brad', 'croissant', 'roll', 'donut', 'oats', 'groats', 'pasta'
-                'perogies', 'noodles', 'olive oil', 'pork', 'beef', 'veal', 'lamb' , 'rabbit', 'chcken',
+                'perogies', 'noodles', 'olive oil', 'pork', 'beef', 'veal', 'lamb', 'rabbit', 'chcken',
                 'duck', 'liver', 'turkey']
     p = Product.objects.get_or_create(name=random.choice(products) )[0]
     p.save()

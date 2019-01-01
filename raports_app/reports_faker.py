@@ -36,10 +36,17 @@ def add_invoice_item(product, invoice):
 
 
 def add_product():
-    p = Product.objects.get_or_create(
-        name=fakegen.text()
-    )[0]
+    products = [
+        'sugar', 'eggs', 'yoghurt', 'margarine', 'butter', 'flour', 'milk', 'oil', 'baking powder', 'rice',
+        'cheese', 'mild cheese', 'full fat cheese', 'cream cheese', 'cream', 'fat', 'egg yolk', 'sparkling',
+        'mineral water', 'drink', 'chips', 'broth', 'soup', 'scrambled eggs', 'boiled eggs', 'fried eggs',
+        'sausage', 'apple', 'pear', 'peach', 'omelette', 'brad', 'croissant', 'roll', 'donut', 'oats', 'groats',
+        'pasta', 'perogies', 'noodles', 'olive oil', 'pork', 'beef', 'veal', 'lamb', 'rabbit', 'chicken', 'duck',
+        'liver', 'turkey'
+    ]
+    p = Product.objects.get_or_create(name=random.choice(products))[0]
     p.save()
+
     return p
 
 
@@ -56,14 +63,10 @@ def add_client():
 
 
 def populate(N=20):
-
-    fake_Nazwa = fakegen.text()
-    fake_cena = random.randint(1, 2)
-
     for entry in range(N):
         product = add_product()
         client = add_client()
-        #report = add_report()
+        # report = add_report()
 
         invoice = add_invoice(client)
 

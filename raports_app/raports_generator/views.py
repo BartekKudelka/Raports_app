@@ -22,13 +22,13 @@ def show_text_report(request, id):
 
 def show_visual_report(request, id):
     report = Report.objects.get(id=id)
-    dump = pprint(report)
-    # invoice = Invoice.objects.get(id=1)
-    # report.invoices.add(invoice)
 
-    query = InvoiceItem.objects.all().query
-    query.group_by = ['product']
-    results = QuerySet(query=query, model=InvoiceItem)
+    # query = Invoice.objects.values('client').query
+
+    # .annotate(quantity_count=Sum('invoice_item__quantity'))
+    # query.group_by = ['invoice_item__product']
+
+    results = QuerySet(query=query, model=Invoice)
     # dataset = Invoice.objects \
     #     .values('start_date') \
     #     .annotate(survived_count=Count('start_date', filter=Q(survived=True)),
@@ -44,8 +44,8 @@ def show_visual_report(request, id):
     products = list()
     quantity = list()
     obj = set
-    for entry in set:
-        categories.append(entry['quantity_count'])
+    # for entry in set:
+    #     categories.append(entry['quantity_count'])
     # survived_series_data.append(str(entry['date_of_issue']))
     # not_survived_series_data.append(entry['invoice_item'])
     # products.append(str(report.invoices.all()[0].invoice_item.all()[0].product))

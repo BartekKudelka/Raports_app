@@ -28,7 +28,7 @@ def show_visual_report(request, id):
     # .annotate(quantity_count=Sum('invoice_item__quantity'))
     # query.group_by = ['invoice_item__product']
 
-    results = QuerySet(query=query, model=Invoice)
+    # results = QuerySet(query=query, model=Invoice)
     # dataset = Invoice.objects \
     #     .values('start_date') \
     #     .annotate(survived_count=Count('start_date', filter=Q(survived=True)),

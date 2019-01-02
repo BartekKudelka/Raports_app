@@ -77,6 +77,6 @@ def show_visual_report(request, id):
             }
 
             dump = json.dumps(chart)
-    #
-    return render(request, 'visual_report.html', {'chart': dump, 'obj': results})
+
+    return render(request, 'visual_report.html', {'chart': dump, 'obj': obj})
     # return render(request, 'visual_report.html', {'chart': chart})

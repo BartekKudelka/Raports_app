@@ -5,13 +5,36 @@
 {% endblock %}
 
 {% block body %}
-<h3>Text Report</h3>
-{{report.start_date}}
-{{report.end_date}}
+<h3>Text Report</h3></br>
+FROM:   <b>{{report.start_date.date}}</b>   TO:   <b>{{report.end_date.date}}</b>
 
-<ul>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Purchase Value</th>
+    </tr>
+    </thead>
+    <tbody>
     {% for invoice in report.invoices.all %}
-    <li>{{invoice.invoice_item.get.product}}: {{invoice.invoice_item.get.quantity}} pieces</li>
+    {{invoice.date_of_issue}}
+
+
+        <tr>
+            <th scope="row">{{invoice.invoice_item.get.id}}</th>
+            <td>{{invoice.invoice_item.get.product}}</td>
+            <td>{{invoice.invoice_item.get.quantity}}</td>
+            <td>{{invoice.invoice_item.get.purchase_value}} $</td>
+        </tr>
+
+
     {% endfor %}
-</ul>
+    </tbody>
+</table>
+
+
+
 {% endblock %}

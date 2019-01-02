@@ -17,7 +17,16 @@ def create_report(request):
 
 def show_text_report(request, id):
     report = Report.objects.get(id=id)
-    return render(request, 'text_report.html', {'report': report})
+
+    range = InvoiceItem.invoice
+    print(range)
+
+    query = InvoiceItem.objects.filter(id=id).query
+    query.group_by = ['product']
+
+    results = QuerySet(query=query, model=InvoiceItem)
+
+    return render(request, 'text_report.html', {'report': report, 'obj' :results, 'range' : range})
 
 
 def show_visual_report(request, id):

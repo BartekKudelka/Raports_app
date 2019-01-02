@@ -32,7 +32,7 @@ class Product(models.Model):
 
 
 class Invoice(models.Model):
-    client = models.ForeignKey(Client)
+    client = models.ForeignKey(Client, on_delete = models.CASCADE)
     date_of_issue = models.DateField()
 
     def __str__(self):

@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Client(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -64,7 +63,7 @@ class Report(models.Model):
 
 
 class InvoiceItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
     invoice = models.ForeignKey(Invoice, related_name="invoice_item", on_delete=models.CASCADE)

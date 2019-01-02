@@ -10,9 +10,10 @@
 
 <ul>
     {% for report in reports %}
-    <li><b>{{report.start_date}}</b></li>
-        <a href=" {% url 'show_visual_report' report.id %}">Show visual report</a></br>
-        <a href=" {% url 'show_text_report' report.id %}">Show text report</a></li>
+    <li><b>{{report.start_date.date}} -  {{report.start_date.date}}</b>
+        <a href=" {% url 'show_visual_report' report.id %}">Show visual report</a>
+        <a href=" {% url 'show_text_report' report.id %}">Show text report</a>
+    </li>
     {% endfor %}
 </ul>
 

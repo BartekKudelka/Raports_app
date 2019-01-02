@@ -21,15 +21,13 @@ FROM:   <b>{{report.start_date.date}}</b>   TO:   <b>{{report.end_date.date}}</b
     <tbody>
     {% for invoice in report.invoices.all %}
     {{invoice.date_of_issue}}
-
-
+    {% for item in invoice.invoice_item.all %}
         <tr>
-            <th scope="row">{{invoice.invoice_item.get.id}}</th>
-            <td>{{invoice.invoice_item.get.product}}</td>
-            <td>{{invoice.invoice_item.get.quantity}}</td>
-            <td>{{invoice.invoice_item.get.purchase_value}} $</td>
+            <td>{{item.product}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{tem.purchase_value}} $</td>
         </tr>
-
+    {% endfor %}
 
     {% endfor %}
     </tbody>

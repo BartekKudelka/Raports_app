@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.db.models import QuerySet
 from .models import Report, Invoice, InvoiceItem
 import json
-from django.db.models import Count, Q, Sum
+from django.db.models import Count, Sum
 from .forms import CreateReportForm
+from django.db.models.functions import TruncMonth
 
 
 def reports(request):
@@ -45,60 +46,124 @@ def show_text_report(request, id):
 def show_visual_report(request, id):
     report = Report.objects.get(id=id)
 
-    # query = Invoice.objects.values('client').query
+    grouped = report.invoices.all() \
+        .annotate(month=TruncMonth('date_of_issue')) \
+        .values('month') \
+        .annotate(c=Count('id'), s=Sum('invoice_item__quantity')) \
+        .values('month', 'c', 's', 'invoice_item__product__name')
 
-    # .annotate(quantity_count=Sum('invoice_item__quantity'))
-    # query.group_by = ['invoice_item__product']
+    mts = report.invoices.all() \
+        .annotate(month=TruncMonth('date_of_issue')) \
+        .values('month') \
+        .annotate(c=Count('id'), s=Sum('invoice_item__quantity')) \
+        .values('month').distinct()
 
-    # results = QuerySet(query=query, model=Invoice)
-    # dataset = Invoice.objects \
-    #     .values('start_date') \
-    #     .annotate(survived_count=Count('start_date', filter=Q(survived=True)),
-    #               not_survived_count=Count('end_date', filter=Q(survived=False))) \
-    #     .order_by('start_date')
+    months = list()
+    obj = dict()
 
-    set = Invoice.objects \
-        .values('invoice_item') \
-        .annotate(quantity_count=Sum('invoice_item__quantity', distinct=True))
+    for month in grouped:
+        mth = month['month'].strftime('%Y-%m')
+        months.append(mth)
+        obj.update({mth: {}})
 
-    dataset = Invoice.objects.values('client', 'date_of_issue', 'invoice_item')
-    categories = list()
+    results = grouped
+
+    all_products = report.invoices.all().values('invoice_item__product__name').distinct()
+
     products = list()
-    quantity = list()
-    obj = set
-    # for entry in set:
-    #     categories.append(entry['quantity_count'])
-    # survived_series_data.append(str(entry['date_of_issue']))
-    # not_survived_series_data.append(entry['invoice_item'])
-    # products.append(str(report.invoices.all()[0].invoice_item.all()[0].product))
-    # quantity.append(str(report.invoices.all()[0].invoice_item.all()[0].quantity))
+    quantity = [0] * len(all_products)
+    quantity2 = [0] * len(all_products)
 
-    for invoice in report.invoices.all():
-        for invoice_item in invoice.invoice_item.all():
-            categories.append(str(invoice_item.product))
+    for product in all_products:
+        products.append(product['invoice_item__product__name'])
+    print('Products:')
+    print(products)
 
-            quantity.append((invoice_item.quantity))
+    print('Products count:' + str(len(products)))
+    months_number = len(months)
+    print('montsh ' + str(len(mts)))
+    listOfLists = []
+
+    for x in range(len(mts)):
+        listOfLists.append(x)
+        listOfLists[x] = [0] * len(all_products)
+
+    for x in range(months_number):
+        for index, elem in enumerate(grouped):
+            for key, val in obj.items():
+                if key == elem['month'].strftime('%Y-%m'):
+                    obj[key].update({elem['invoice_item__product__name']: elem['s']})
+
+    print(listOfLists)
+
+    #działa
+    # for index, product in enumerate(grouped):
+    #     for key, val in obj.items():
+    #         for k, v in val.items():
+    #             for i, p in enumerate(products):
+    #                 if product['invoice_item__product__name'] == k and product['month'].strftime('%Y-%m') == key and product['invoice_item__product__name'] == p:
+    #                     quantity[i] = v
+    #                 elif product['invoice_item__product__name'] == k and not product['month'].strftime('%Y-%m') == key and product['invoice_item__product__name'] == p:
+    #                     quantity2[i] = v
+
+
+    for ind, val in enumerate(listOfLists):
+        for index, product in enumerate(grouped):
+            for key, val in obj.items():
+                for k, v in val.items():
+                    for i, p in enumerate(products):
+                        if product['invoice_item__product__name'] == k and product['month'].strftime('%Y-%m') == key and product['invoice_item__product__name'] == p:
+                            listOfLists[0][i] = v
+                        elif product['invoice_item__product__name'] == k and not product['month'].strftime('%Y-%m') == key and product['invoice_item__product__name'] == p:
+                            listOfLists[1][i] = v
+
+    #TODO: dodawanie dynamicznie list
+
+    # print('Dictionary')
+    # print(obj)
+    # print('quantity1')
+    # print(quantity)
+    # print('quantity2')
+    # print(quantity2)
+
+    # series = []
+    # for index, elem in enumerate(listOfLists):
+    #     series.append({
+    #         'name': month[index],
+    #         'data': elem,
+    #         'color': 'green'
+    #     })
+
 
     survived_series = {
-        'name': 'Survived',
-        'data': quantity,
+        'name': months[0],
+        'data': listOfLists[0],
         'color': 'green'
     }
 
     not_survived_series = {
-        'name': 'Survived',
-        'data': products,
+        'name': months[1],
+        'data': listOfLists[1],
         'color': 'red'
     }
 
     chart = {
         'chart': {'type': 'column'},
         'title': {'text': 'Titanic Survivors by Ticket Class'},
-        'xAxis': {'categories': categories},
-        'series': [survived_series]
+        'xAxis': {'categories': products},
+        'series': [survived_series, not_survived_series]
+        # 'series': series
     }
 
-    dump = json.dumps(chart)
+    chart = json.dumps(chart)
 
-    return render(request, 'visual_report.html', {'chart': dump, 'obj': obj, 'report': report})
-    # return render(request, 'visual_report.html', {'chart': chart})
+    return render(request, 'visual_report.html', {
+        'chart': chart,
+        'obj': results,
+        'report': report,
+        'products': products
+    })
+
+
+
+

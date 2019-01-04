@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>New Report</title>
+    <title>Visual Report</title>
 {% endblock %}
 
 {% block body %}
@@ -9,13 +9,22 @@
 
     <h5>Report from {{ report.start_date.date }} to {{ report.end_date.date }}</h5>
 
+{#    faktury#}
     <ul>
-        {% for invoice in report.invoices.all %}
-            <li>{{ invoice.invoice_item.product }}</li>
+
+        {% for product in products %}
+            <li>{{ product}}</li>
         {% endfor %}
     </ul>
 
-    {{ obj }}
+{#    {{ products }}#}
+
+
+    {% for invoice in obj %}
+            <li>{{ invoice}}</li>
+        {% endfor %}
+
+    <script>console.log({{ chart|safe }})</script>
     <hr>
     {{ chart }}
     <div id="container"></div>

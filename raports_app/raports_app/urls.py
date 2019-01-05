@@ -28,4 +28,6 @@ urlpatterns = [
     url(r'^login/$', LoginView, {'template_name': 'login.html'}, name="login"),
     url(r'^logout/$', LogoutView, {'next_page': '/logged_out/'}, name="logout"),
     url(r'^logged_out/$', views.logged_out, name="logged_out"),
-]
+
+    url(r'^password/$', views.change_password, name='change_password'),
+    ]

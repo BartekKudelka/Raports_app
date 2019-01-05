@@ -7,7 +7,9 @@
 {% block body %}
     <h3 class="text-center my-5">Reports</h3>
     {% if user.is_superuser %}
-        <a class="btn btn-primary mb-5" href="{% url 'create_report' %}">Create Report</a>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-primary mb-5" href="{% url 'create_report' %}">Create Report</a>
+        </div>
     {% endif %}
     <ul class="list-group">
         {% for report in reports %}

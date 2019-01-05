@@ -15,18 +15,14 @@
                 <article class="card-body">
                     <form method="post">
                         {% csrf_token %}
-                        {% for field in form %}
-                            <div class="col form-group">
-                                {{ field.label_tag }}<br>
-                                {{ field }}
-                                {% if field.help_text %}
-                                    <small style="color: grey">{{ field.help_text }}</small>
-                                {% endif %}
-                                {% for error in field.errors %}
-                                    <p style="color: red">{{ error }}</p>
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
+                        <div class="form-group">
+                            <label>Start date</label>
+                            <input type="text" name="start_date" class="form-control" placeholder="" value="{{ report.start_date|date:"Y-m-d H:i:s" }}">
+                        </div>
+                        <div class="form-group">
+                            <label>End date</label>
+                            <input type="text" name="end_date" class="form-control" placeholder="" value="{{ report.end_date|date:"Y-m-d H:i:s" }}">
+                        </div>
                         <p>
                             <small class="text-muted text-center">Provide start date and end date of report.
                             </small>
@@ -39,5 +35,8 @@
                 </article>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'reports' %}" class="btn btn-primary text-center">Back to list</a>
     </div>
 {% endblock %}

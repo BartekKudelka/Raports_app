@@ -5,22 +5,25 @@
 {% endblock %}
 
 {% block body %}
-<div class="row justify-content-center">
-    <div class="col-md-12 my-5">
-        <div class="card">
-            <header class="card-header">
+    <div class="row justify-content-center">
+        <div class="col-md-12 my-5">
+            <div class="card">
+                <header class="card-header">
 
-                <h3 class="text-center card-title my-5">Visual Report</h3>
+                    <h3 class="text-center card-title my-5">Visual Report</h3>
 
-            </header>
-            <article class="card-body">
-            </article>
+                </header>
+                <article class="card-body">
+                </article>
 
-    <p class="text-center d-none">There was no sales</p>
+                <p class="text-center d-none">There was no sales</p>
 
-    <div id="container"></div>
-    <script src="https://code.highcharts.com/highcharts.src.js"></script>
-    <script>
-        Highcharts.chart('container', {{ chart|safe }});
-    </script>
+                <div id="container"></div>
+            </div>
+        </div>
+            <a href="{% url 'reports' %}" class="btn btn-primary">Back to list</a>
+        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+        <script>
+            Highcharts.chart('container', {{ chart|safe }});
+        </script>
 {% endblock %}

@@ -1,5 +1,4 @@
 from django.contrib.auth import login as auth_login, authenticate
-from django.shortcuts import render, redirect
 from raports_app.polls.forms import SignUpForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
@@ -29,6 +28,7 @@ def sign_up(request):
 def logged_out(request):
     return render(request, 'logged_out.html')
 
+
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -41,6 +41,10 @@ def change_password(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'accounts/change_password.html', {
+    return render(request, 'password_change.html', {
         'form': form
     })
+
+
+def profile(request):
+    return render(request, 'profile.html')

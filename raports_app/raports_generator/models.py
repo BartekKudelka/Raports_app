@@ -76,4 +76,4 @@ class InvoiceItem(models.Model):
         return
 
     def __str__(self):
-        return str(self.product) + " " + str(self.quantity) + " szt"
+        return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)

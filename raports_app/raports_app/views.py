@@ -3,10 +3,6 @@ from django.shortcuts import render, redirect
 from raports_app.polls.forms import SignUpForm
 
 
-def home(request):
-    return render(request, 'home.html')
-
-
 def sign_up(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)

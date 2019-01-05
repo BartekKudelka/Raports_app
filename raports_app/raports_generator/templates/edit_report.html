@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>New Report</title>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-5 my-5">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2 text-center">Edit Report</h4>
+                </header>
+                <article class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="col form-group">
+                                {{ field.label_tag }}<br>
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <small style="color: grey">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <p>
+                            <small class="text-muted text-center">Provide start date and end date of report.
+                            </small>
+                        </p>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Edit Report</button>
+                        </div> <!-- form-group// -->
+
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock %}

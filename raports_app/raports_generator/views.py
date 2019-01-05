@@ -5,30 +5,36 @@ import json
 from django.db.models import Count, Sum
 from .forms import CreateReportForm
 from django.db.models.functions import TruncMonth
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url='/login/')
 def reports(request):
-    reports = Report.objects.all()
+    reports = Report.objects.all().order_by('-start_date')
     return render(request, 'reports.html', {'reports': reports})
 
 
+@login_required(login_url='/login/')
 def create_report(request):
-    if request.method == 'POST':
-        form = CreateReportForm(request.POST)
-        if form.is_valid():
-            start_date = form.cleaned_data.get('start_date')
-            end_date = form.cleaned_data.get('end_date')
-            invoices = Invoice.objects.filter(date_of_issue__range=(start_date, end_date))
-            report = Report(start_date=start_date, end_date=end_date)
-            report.save()
-            for invoice in invoices:
-                report.invoices.add(invoice)
-            return redirect('reports')
-    else:
-        form = CreateReportForm()
-    return render(request, 'create_report.html', {'form': form})
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = CreateReportForm(request.POST)
+            if form.is_valid():
+                start_date = form.cleaned_data.get('start_date')
+                end_date = form.cleaned_data.get('end_date')
+                invoices = Invoice.objects.filter(date_of_issue__range=(start_date, end_date))
+                report = Report(start_date=start_date, end_date=end_date)
+                report.save()
+                for invoice in invoices:
+                    report.invoices.add(invoice)
+                return redirect('reports')
+        else:
+            form = CreateReportForm()
+        return render(request, 'create_report.html', {'form': form})
+    return redirect('home')
 
 
+@login_required(login_url='/login/')
 def show_text_report(request, id):
     report = Report.objects.get(id=id)
 
@@ -42,7 +48,7 @@ def show_text_report(request, id):
 
     return render(request, 'text_report.html', {'report': report, 'obj': results, 'range': range})
 
-
+@login_required(login_url='/login/')
 def show_visual_report(request, id):
     report = Report.objects.get(id=id)
 
@@ -64,6 +70,7 @@ def show_visual_report(request, id):
     obj = dict()
     products = list()
     series = []
+    list_of_lists = []
 
     # Add items
     for item in query_items:
@@ -76,12 +83,13 @@ def show_visual_report(request, id):
         products.append(product['invoice_item__product__name'])
 
     number_of_items = len(items_list)
-    list_of_lists = []
 
+    # Fill lists with zeros
     for x in range(len(months_query)):
         list_of_lists.append(x)
         list_of_lists[x] = [0] * len(all_products)
 
+    # Fill dictionary with products and sum of products used in given month
     for x in range(number_of_items):
         for index, elem in enumerate(query_items):
             for key, val in obj.items():
@@ -141,3 +149,31 @@ def show_visual_report(request, id):
         'chart': chart,
         'report': report
     })
+
+
+@login_required(login_url='/login/')
+def delete_report(request, id):
+    if request.user.is_superuser:
+        report = Report.objects.get(id=id)
+        report.delete()
+    return redirect('reports')
+
+
+@login_required(login_url='/login/')
+def edit_report(request, id):
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = CreateReportForm(request.POST)
+            if form.is_valid():
+                start_date = form.cleaned_data.get('start_date')
+                end_date = form.cleaned_data.get('end_date')
+                invoices = Invoice.objects.filter(date_of_issue__range=(start_date, end_date))
+                report = Report(start_date=start_date, end_date=end_date)
+                report.save()
+                for invoice in invoices:
+                    report.invoices.add(invoice)
+                return redirect('reports')
+        else:
+            form = CreateReportForm()
+        return render(request, 'create_report.html', {'form': form})
+    return redirect('home')

@@ -60,7 +60,10 @@ def show_visual_report(request, id):
 
     months = list()
     obj = dict()
+    products = list()
+    all_products = report.invoices.all().values('invoice_item__product__name').distinct()
 
+    # Add months
     for month in grouped:
         mth = month['month'].strftime('%Y-%m')
         months.append(mth)
@@ -68,16 +71,10 @@ def show_visual_report(request, id):
 
     results = grouped
 
-    all_products = report.invoices.all().values('invoice_item__product__name').distinct()
 
-    products = list()
-    quantity = [0] * len(all_products)
-    quantity2 = [0] * len(all_products)
 
     for product in all_products:
         products.append(product['invoice_item__product__name'])
-    print('Products:')
-    print(products)
 
     print('Products count:' + str(len(products)))
     months_number = len(months)
@@ -126,13 +123,15 @@ def show_visual_report(request, id):
     # print('quantity2')
     # print(quantity2)
 
-    # series = []
-    # for index, elem in enumerate(listOfLists):
-    #     series.append({
-    #         'name': month[index],
-    #         'data': elem,
-    #         'color': 'green'
-    #     })
+    series = []
+    print(listOfLists)
+    for index, elem in enumerate(listOfLists):
+        print('series')
+        series.append({
+            'name': mts[index]['month'].strftime('%Y-%m'),
+            'data': elem,
+            'color': 'green'
+        })
 
 
     survived_series = {
@@ -151,8 +150,8 @@ def show_visual_report(request, id):
         'chart': {'type': 'column'},
         'title': {'text': 'Titanic Survivors by Ticket Class'},
         'xAxis': {'categories': products},
-        'series': [survived_series, not_survived_series]
-        # 'series': series
+        # 'series': [survived_series, not_survived_series]
+        'series': series
     }
 
     chart = json.dumps(chart)

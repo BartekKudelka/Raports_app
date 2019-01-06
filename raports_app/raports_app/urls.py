@@ -16,7 +16,8 @@ urlpatterns = [
     url(r'^logged_out/$', views.logged_out, name="logged_out"),
 
     url(r'^password/$', views.change_password, name='change_password'),
-    url(r'^profile/$', views.edit_profile, name='edit_profile'),
+    url(r'^edit_profile/$', views.edit_profile, name='edit_profile'),
+    url(r'^profile/$', views.show_profile, name='profile'),
     ]
 
 

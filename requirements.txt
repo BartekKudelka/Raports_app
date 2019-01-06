@@ -4,3 +4,4 @@ django-jenkins
 pylint
 coverage
 faker
+django-widget-tweaks

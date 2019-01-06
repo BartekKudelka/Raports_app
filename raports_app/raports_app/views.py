@@ -1,5 +1,5 @@
 from django.contrib.auth import login as auth_login, authenticate
-from raports_app.polls.forms import SignUpForm, EditProfileForm
+from raports_app.polls.forms import SignUpForm, EditProfileForm, CustomChangePasswordForm
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -27,19 +27,23 @@ def logged_out(request):
 
 def change_password(request):
     if request.method == 'POST':
-        form = PasswordChangeForm(request.user, request.POST)
+        form = CustomChangePasswordForm(request.user, request.POST)
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)  # Important!
             messages.success(request, 'Your password was successfully updated!')
-            return redirect('change_password')
+            return redirect('profile')
         else:
             messages.error(request, 'Please correct the error below.')
     else:
-        form = PasswordChangeForm(request.user)
+        form = CustomChangePasswordForm(request.user)
     return render(request, 'password_change.html', {
         'form': form
     })
+
+
+def show_profile(request):
+    return render(request, 'profile.html', {'user': request.user})
 
 
 def edit_profile(request):
@@ -51,9 +55,5 @@ def edit_profile(request):
     else:
         form = EditProfileForm(request.POST, instance=request.user)
         args = {'form': form}
-        return render(request, 'profile.html', args)
-
-
-def profile(request):
-    return render(request, 'profile.html')
+        return render(request, 'edit_profile.html', args)
 

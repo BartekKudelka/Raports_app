@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect
 from django.db.models import QuerySet
-from .models import Report, Invoice, InvoiceItem, Product
-from pprint import pprint
+from .models import Report, Invoice, InvoiceItem
 import json
-from django.db.models import Count, Sum
 from .forms import CreateReportForm
 from django.db.models.functions import TruncMonth
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count, Q, Sum
-import datetime
+from django.db.models import Count, Sum
 
 
 def compare(products):

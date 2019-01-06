@@ -1,11 +1,34 @@
 from django.shortcuts import render, redirect
 from django.db.models import QuerySet
-from .models import Report, Invoice, InvoiceItem
+from .models import Report, Invoice, InvoiceItem, Product
+from pprint import pprint
 import json
 from django.db.models import Count, Sum
 from .forms import CreateReportForm
 from django.db.models.functions import TruncMonth
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count, Q, Sum
+import datetime
+
+
+def compare(products):
+    products2 = []
+
+    for x in products:
+        while len(products) != 0:
+
+            it = products.pop()
+            for y in products:
+                check = y
+                if it.product == check.product:
+                    repeat = True
+                    it.quantity = it.quantity + check.quantity
+                    it.purchase_value = it.purchase_value + check.purchase_value
+                    products.remove(check)
+
+            products2.append(it)
+
+    return products2
 
 
 @login_required(login_url='/login/')
@@ -38,15 +61,33 @@ def create_report(request):
 def show_text_report(request, id):
     report = Report.objects.get(id=id)
 
-    range = InvoiceItem.invoice
-    print(range)
+    q = Invoice.objects.filter(date_of_issue__gte=report.start_date).filter(date_of_issue__lte=report.end_date)
+
+    products = []
+    products2 = []
+
+    for invoice in q:
+        for item in invoice.invoice_item.all():
+            products.append(item)
+
+    for x in range(len(products)):
+        products = compare(products)
+
+    invoices = Invoice.objects.all()
+    items = InvoiceItem.objects.all()
+    #  for inv in invoices:
+    #     if inv.date_of_issue.month >= report.start_date.month and inv.date_of_issue.day >= report.start_date.day\
+    #        and inv.date_of_issue.month <= report.end_date.month and inv.date_of_issue.day <= report.end_date.day:
+
+    # print(inv.date_of_issue)
+    #       print(i)
 
     query = InvoiceItem.objects.filter(id=id).query
     query.group_by = ['product']
 
     results = QuerySet(query=query, model=InvoiceItem)
 
-    return render(request, 'text_report.html', {'report': report, 'obj': results, 'range': range})
+    return render(request, 'text_report.html', {'report': report, 'obj': results, 'invoices': invoices, 'items': products})
 
 @login_required(login_url='/login/')
 def show_visual_report(request, id):

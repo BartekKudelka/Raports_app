@@ -64,7 +64,7 @@ class Report(models.Model):
 
 
 class InvoiceItem(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
     invoice = models.ForeignKey(Invoice, related_name="invoice_item")
@@ -76,4 +76,4 @@ class InvoiceItem(models.Model):
         return
 
     def __str__(self):
-        return str(self.product) + " " + str(self.quantity) + " szt"
+        return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import QuerySet
 from .models import Report, Invoice, InvoiceItem, Product
-from pprint import pprint
 import json
 from django.db.models import Count, Sum
 from .forms import CreateReportForm
@@ -88,6 +87,7 @@ def show_text_report(request, id):
     results = QuerySet(query=query, model=InvoiceItem)
 
     return render(request, 'text_report.html', {'report': report, 'obj': results, 'invoices': invoices, 'items': products})
+
 
 @login_required(login_url='/login/')
 def show_visual_report(request, id):

@@ -8,24 +8,12 @@ class Client(models.Model):
     phone_number = models.CharField(max_length=30)
     NIP_number = models.CharField(max_length=30)
 
-    def addClient(self):
-        return
-
-    def deleteClient(self):
-        return
-
     def __str__(self):
         return self.first_name + " " + self.last_name
 
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-
-    def addProduct(self):
-        return
-
-    def deleteProduct(self):
-        return
 
     def __str__(self):
         return self.name
@@ -44,36 +32,12 @@ class Report(models.Model):
     end_date = models.DateTimeField()
     invoices = models.ManyToManyField(Invoice, related_name="reports")
 
-    def addReport(self):
-        return
-
-    def editReport(self):
-        return
-
-    def deleteReport(self):
-        return
-
-    def getReport(self):
-        return
-
-    def generateChart(self):
-        return
-
-    def generateTable(self):
-        return
-
 
 class InvoiceItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
     invoice = models.ForeignKey(Invoice, related_name="invoice_item")
-
-    def addPurchase(self):
-        return
-
-    def deletePurchase(self):
-        return
 
     def __str__(self):
         return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)

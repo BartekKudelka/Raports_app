@@ -6,10 +6,6 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 
 
-def home(request):
-    return render(request, 'home.html')
-
-
 def sign_up(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)

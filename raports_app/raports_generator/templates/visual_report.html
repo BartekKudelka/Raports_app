@@ -5,31 +5,25 @@
 {% endblock %}
 
 {% block body %}
-    <h3>Visual Report</h3>
+    <div class="row justify-content-center">
+        <div class="col-md-12 my-5">
+            <div class="card">
+                <header class="card-header">
 
-    <h5>Report from {{ report.start_date.date }} to {{ report.end_date.date }}</h5>
+                    <h3 class="text-center card-title my-5">Visual Report</h3>
 
-{#    faktury#}
-    <ul>
+                </header>
+                <article class="card-body">
+                </article>
 
-        {% for product in products %}
-            <li>{{ product}}</li>
-        {% endfor %}
-    </ul>
+                <p class="text-center d-none">There was no sales</p>
 
-{#    {{ products }}#}
-
-
-    {% for invoice in obj %}
-            <li>{{ invoice}}</li>
-        {% endfor %}
-
-    <script>console.log({{ chart|safe }})</script>
-    <hr>
-    {{ chart }}
-    <div id="container"></div>
-    <script src="https://code.highcharts.com/highcharts.src.js"></script>
-    <script>
-        Highcharts.chart('container', {{ chart|safe }});
-    </script>
+                <div id="container"></div>
+            </div>
+        </div>
+            <a href="{% url 'reports' %}" class="btn btn-primary">Back to list</a>
+        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+        <script>
+            Highcharts.chart('container', {{ chart|safe }});
+        </script>
 {% endblock %}

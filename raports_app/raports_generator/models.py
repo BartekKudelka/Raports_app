@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Client(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -31,7 +32,7 @@ class Product(models.Model):
 
 
 class Invoice(models.Model):
-    client = models.ForeignKey(Client, on_delete = models.CASCADE)
+    client = models.ForeignKey(Client)
     date_of_issue = models.DateField()
 
     def __str__(self):
@@ -63,10 +64,10 @@ class Report(models.Model):
 
 
 class InvoiceItem(models.Model):
-    product = models.ForeignKey(Product)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
-    invoice = models.ForeignKey(Invoice, related_name="invoice_item", on_delete=models.CASCADE)
+    invoice = models.ForeignKey(Invoice, related_name="invoice_item")
 
     def addPurchase(self):
         return
@@ -75,4 +76,4 @@ class InvoiceItem(models.Model):
         return
 
     def __str__(self):
-        return str(self.product) + " " + str(self.quantity) + " szt"
+        return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)

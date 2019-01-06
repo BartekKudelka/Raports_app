@@ -19,25 +19,21 @@ FROM:   <b>{{report.start_date.date}}</b>   TO:   <b>{{report.end_date.date}}</b
     </tr>
     </thead>
     <tbody>
-    {% for invoice in report.invoices.all %}
 
-        {% for item in invoice.invoice_item.all %}
 
-            {% if item.invoice.date_of_issue.month >= report.start_date.month and item.invoice.date_of_issue.day >= report.start_date.day and item.invoice.date_of_issue.month <= report.end_date.month and item.invoice.date_of_issue.day <= report.end_date.day %}
-                <tr>
-
-                    <th scope="row">{{forloop.counter}}</th>
-                    <td>{{item.product}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{item.purchase_value}} $</td>
-                    <td>{{item.invoice.date_of_issue}}</td>
-
-                </tr>
-            {% endif %}
-        {% endfor %}
-
+    {% for item in items %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{item.product}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.purchase_value}} $</td>
+        </tr>
     {% endfor %}
+
+
     </tbody>
 </table>
+
+
 
 {% endblock %}

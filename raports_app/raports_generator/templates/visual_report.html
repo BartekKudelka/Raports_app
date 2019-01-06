@@ -1,26 +1,26 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>New Report</title>
+    <title>Visual Report</title>
 {% endblock %}
 
 {% block body %}
-<h3>Visual Report</h3>
-{{report.start_date}}
-{{report.end_date}}
+<div class="row justify-content-center">
+    <div class="col-md-12 my-5">
+        <div class="card">
+            <header class="card-header">
 
-<ul>
-    {% for invoice in report.invoices.all %}
-    <li>{{invoice.invoice_item.get.product}}</li>
-    {% endfor %}
-</ul>
+                <h3 class="text-center card-title my-5">Visual Report</h3>
 
-{{obj}}
-<hr>
-{{chart}}
-  <div id="container"></div>
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script>
-  Highcharts.chart('container', {{ chart|safe }});
-</script>
+            </header>
+            <article class="card-body">
+            </article>
+
+    <p class="text-center d-none">There was no sales</p>
+
+    <div id="container"></div>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script>
+        Highcharts.chart('container', {{ chart|safe }});
+    </script>
 {% endblock %}

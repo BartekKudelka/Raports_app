@@ -6,6 +6,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.shortcuts import render, redirect
 
 
+
 def home(request):
     return render(request, 'home.html')
 
@@ -45,6 +46,7 @@ def change_password(request):
         'form': form
     })
 
+
 def edit_profile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
@@ -54,7 +56,8 @@ def edit_profile(request):
     else:
         form = EditProfileForm(request.POST, instance=request.user)
         args = {'form': form}
-        return render(request, 'profile.html',args)
+        return render(request, 'profile.html', args)
+
 
 def profile(request):
     return render(request, 'profile.html')

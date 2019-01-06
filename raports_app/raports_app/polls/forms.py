@@ -27,6 +27,7 @@ class SignUpForm(UserCreationForm):
 #             'password1',
 #         }
 
+
 class EditProfileForm(UserChangeForm):
     template_name='/something/else'
 

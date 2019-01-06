@@ -15,8 +15,8 @@ urlpatterns = [
     url(r'^logout/$', logout, {'next_page': '/logged_out/'}, name="logout"),
     url(r'^logged_out/$', views.logged_out, name="logged_out"),
 
-    url(r'^profile/$', views.profile, name='user_profile'),
     url(r'^password/$', views.change_password, name='change_password'),
     url(r'^profile/$', views.edit_profile, name='edit_profile'),
     ]
+
 

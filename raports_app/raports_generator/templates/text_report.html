@@ -1,47 +1,43 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Text Report</title>
+    <title>Text Report</title>
 {% endblock %}
 
 {% block body %}
-<h3>Text Report</h3></br>
-FROM:   <b>{{report.start_date.date}}</b>   TO:   <b>{{report.end_date.date}}</b>
+    <h3 class="text-center my-5">Text Report</h3>
+    <p class="text-center">FROM: <b>{{ report.start_date|date:"Y-m-d" }}</b> TO: <b>
+        {{ report.end_date|date:"Y-m-d" }}</b></p>
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Purchase Value</th>
-    </tr>
-    </thead>
-    <tbody>
-
-
-    {% for item in items %}
+    <table class="table">
+        <thead>
         <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{item.product}}</td>
-            <td>{{item.quantity}}</td>
-            <td>{{item.purchase_value}} $</td>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Purchase Value</th>
         </tr>
-    {% endfor %}
-        <b><tr>
-            <th>====</th>
-            <th>SUMARY</th>
-            <th>{{qty}}</th>
-            <th>{{val}}$</th>
-        </tr></b>
-    </tbody>
+        </thead>
+        <tbody>
 
 
-
-
-    </tbody>
-</table>
-
-
+        {% for item in items %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ item.product }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.purchase_value }} $</td>
+            </tr>
+        {% endfor %}
+        <b>
+            <tr>
+                <th>====</th>
+                <th>SUMMARY</th>
+                <th>{{ qty }}</th>
+                <th>{{ val }}$</th>
+            </tr>
+        </b>
+        </tbody>
+    </table>
 
 {% endblock %}

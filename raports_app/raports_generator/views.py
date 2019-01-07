@@ -41,7 +41,6 @@ def show_text_report(request, id):
     q = Invoice.objects.filter(date_of_issue__gte=report.start_date).filter(date_of_issue__lte=report.end_date)
 
     products = []
-    products2 = []
 
     for invoice in q:
         for item in invoice.invoice_item.all():
@@ -51,13 +50,13 @@ def show_text_report(request, id):
         products = compare(products)
 
 
-    prize_sum =0
-    quantity_sum =0
+    price_sum = 0
+    quantity_sum = 0
     for x in products:
-        prize_sum =prize_sum +  x.purchase_value
+        price_sum = price_sum + x.purchase_value
         quantity_sum = quantity_sum + x.quantity
 
-    return render(request, 'text_report.html', {'report': report, 'items': products, 'qty': quantity_sum, 'val':prize_sum})
+    return render(request, 'text_report.html', {'report': report, 'items': products, 'qty': quantity_sum, 'val': price_sum})
 
 
 @login_required(login_url='/login/')

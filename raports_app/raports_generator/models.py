@@ -45,6 +45,7 @@ class InvoiceItem(models.Model):
         return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)
 
 
+
 def compare(products):
     products2 = []
 

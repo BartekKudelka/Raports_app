@@ -12,6 +12,8 @@ class Client(models.Model):
         return self.first_name + " " + self.last_name
 
 
+
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
 
@@ -20,7 +22,7 @@ class Product(models.Model):
 
 
 class Invoice(models.Model):
-    client = models.ForeignKey(Client)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
     date_of_issue = models.DateField()
 
     def __str__(self):
@@ -37,7 +39,27 @@ class InvoiceItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_value = models.FloatField()
-    invoice = models.ForeignKey(Invoice, related_name="invoice_item")
+    invoice = models.ForeignKey(Invoice, related_name="invoice_item", on_delete= models.CASCADE)
 
     def __str__(self):
         return str(self.product) + " " + str(self.quantity) + " szt " + str(self.purchase_value)
+
+
+def compare(products):
+    products2 = []
+
+    for x in products:
+        while len(products) != 0:
+
+            it = products.pop()
+            for y in products:
+                check = y
+                if it.product == check.product:
+                    repeat = True
+                    it.quantity = it.quantity + check.quantity
+                    it.purchase_value = it.purchase_value + check.purchase_value
+                    products.remove(check)
+
+            products2.append(it)
+
+    return products2

@@ -1,33 +1,11 @@
 from django.shortcuts import render, redirect
 from django.db.models import QuerySet
-from .models import Report, Invoice, InvoiceItem, Product
+from .models import Report, Invoice, InvoiceItem, Product, compare
 import json
 from django.db.models import Count, Sum
 from .forms import CreateReportForm
 from django.db.models.functions import TruncMonth
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count, Q, Sum
-import datetime
-
-
-def compare(products):
-    products2 = []
-
-    for x in products:
-        while len(products) != 0:
-
-            it = products.pop()
-            for y in products:
-                check = y
-                if it.product == check.product:
-                    repeat = True
-                    it.quantity = it.quantity + check.quantity
-                    it.purchase_value = it.purchase_value + check.purchase_value
-                    products.remove(check)
-
-            products2.append(it)
-
-    return products2
 
 
 @login_required(login_url='/login/')
@@ -72,21 +50,14 @@ def show_text_report(request, id):
     for x in range(len(products)):
         products = compare(products)
 
-    invoices = Invoice.objects.all()
-    items = InvoiceItem.objects.all()
-    #  for inv in invoices:
-    #     if inv.date_of_issue.month >= report.start_date.month and inv.date_of_issue.day >= report.start_date.day\
-    #        and inv.date_of_issue.month <= report.end_date.month and inv.date_of_issue.day <= report.end_date.day:
 
-    # print(inv.date_of_issue)
-    #       print(i)
+    prize_sum =0
+    quantity_sum =0
+    for x in products:
+        prize_sum =prize_sum +  x.purchase_value
+        quantity_sum = quantity_sum + x.quantity
 
-    query = InvoiceItem.objects.filter(id=id).query
-    query.group_by = ['product']
-
-    results = QuerySet(query=query, model=InvoiceItem)
-
-    return render(request, 'text_report.html', {'report': report, 'obj': results, 'invoices': invoices, 'items': products})
+    return render(request, 'text_report.html', {'report': report, 'items': products, 'qty': quantity_sum, 'val':prize_sum})
 
 
 @login_required(login_url='/login/')

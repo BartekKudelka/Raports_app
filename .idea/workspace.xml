@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee3ebed-ed42-4228-85f2-0ffa122ed21d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/raports_app/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/raports_app/raports_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raports_app/raports_generator/migrations/0001_initial.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raports_app/raports_app/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="252">
+              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -230,11 +227,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="66" />
-    <option name="y" value="2" />
-    <option name="width" value="1943" />
-    <option name="height" value="938" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="204" />
+    <option name="y" value="116" />
+    <option name="width" value="1782" />
+    <option name="height" value="879" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -350,11 +347,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="3" width="1782" height="1047" extended-state="0" />
+    <frame x="204" y="116" width="1782" height="879" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7724289" visible="true" weight="0.15737514" />
-      <window_info id="Structure" order="1" sideWeight="0.22757111" side_tool="true" visible="true" weight="0.15737514" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7706767" visible="true" weight="0.15737514" />
+      <window_info id="Structure" order="1" sideWeight="0.22932331" side_tool="true" visible="true" weight="0.15737514" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32932165" />
@@ -367,7 +364,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.4983165" weight="0.3298611" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.48366702" side_tool="true" weight="0.49457702" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.516333" weight="0.23413567" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.516333" visible="true" weight="0.28686327" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4983165" weight="0.3298611" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.537037" weight="0.3298611" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -614,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="252">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -1,13 +1,12 @@
-
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from raports_app.polls.models import User
 
+
 def home(request):
-    users = User.objects.all()
-    args = {'users': users}
-    return render(request, 'home.html', args)
+    return render(request, 'home.html')
+
 
 def sign_up(request):
     if request.method == 'POST':
@@ -22,10 +21,3 @@ def sign_up(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
-
-
-def login(request):
-    return render(request, 'login.html')
-
-def logout(request):
-    return render(request, 'logout.html')

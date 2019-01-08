@@ -15,17 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
-
 from . import views
-
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^raports_generator/', include('raports_generator.urls')),
-    url(r'^$', views.home, name='home'),
-    url(r'^sign_up/', views.sign_up, name="sign_up"),
+    url(r'^sign_up/$', views.sign_up, name="sign_up"),
 
-    url(r'^login/', views.login, name="login"),
-    url(r'^logout/', views.logout),
+    url(r'^login/$', login, {'template_name': 'login.html'}, name="login"),
+    url(r'^logout/$', logout, {'next_page': '/logged_out/'}, name="logout"),
+    url(r'^', views.home, name='home'),
 ]

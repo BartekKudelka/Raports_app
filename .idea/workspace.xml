@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee3ebed-ed42-4228-85f2-0ffa122ed21d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raports_app/raports_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/raports_app/raports_app/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,13 +78,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="211" />
-          <entry key="py" value="1302" />
+          <entry key="py" value="1303" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="211" />
-          <entry key="Python" value="1302" />
+          <entry key="Python" value="1303" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -113,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raports_app/raports_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
+            <state relative-caret-position="323">
               <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
                 <element signature="e#645#686#0" expanded="true" />
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/raports_app/raports_app/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state relative-caret-position="252">
+              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -134,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="102">
               <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -233,7 +233,6 @@
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/result.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/forms.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/views.py" />
-        <option value="$PROJECT_DIR$/raports_app/raports_app/settings.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/logout.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/login.html" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/signup.html" />
@@ -253,6 +252,7 @@
         <option value="$PROJECT_DIR$/raports_app/raports_generator/urls.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_generator/views.py" />
         <option value="$PROJECT_DIR$/raports_app/raports_app/templates/base.html" />
+        <option value="$PROJECT_DIR$/raports_app/raports_app/settings.py" />
       </list>
     </option>
   </component>
@@ -383,9 +383,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="74" width="1782" height="890" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77163905" visible="true" weight="0.15737514" />
-      <window_info id="Structure" order="1" sideWeight="0.22836095" side_tool="true" visible="true" weight="0.15737514" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.76979744" visible="true" weight="0.15911731" />
+      <window_info id="Structure" order="1" sideWeight="0.23020259" side_tool="true" visible="true" weight="0.15911731" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32922733" />
@@ -561,7 +562,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
+        <state relative-caret-position="323">
           <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
             <element signature="e#645#686#0" expanded="true" />
@@ -620,7 +621,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_generator/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="102">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -675,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raports_app/raports_app/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="252">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
         </state>
       </provider>
     </entry>

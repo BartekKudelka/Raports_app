@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'raports_app.polls',
-    'raports_generator'
+    'raports_generator',
     'django_jenkins',
 ]
 

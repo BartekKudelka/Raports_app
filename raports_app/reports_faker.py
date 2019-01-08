@@ -3,14 +3,23 @@ import os, django, random
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "raports_app.settings")
 django.setup()
 
+from django.contrib.auth.models import User
 from raports_generator.models import Client, InvoiceItem, Product, Report, Invoice
 from faker import Faker
 
 fakegen = Faker('pl_PL')
 
 
+def add_admin_user():
+    password = 'zaq1@WSX'
+    my_admin = User.objects.create_superuser('admin2', 'myemail@test.com', password)
+
+
 def add_report():
-    r = Report.objects.get_of_create()[0]
+    r = Report.objects.get_or_create(
+        start_date=fakegen.date_between(start_date="-1y", end_date="today"),
+        end_date=fakegen.date_between(start_date="-1y", end_date="today")
+    )[0]
     r.save()
     return r
 
@@ -69,13 +78,16 @@ def populate(N=50):
         # report = add_report()
 
         invoice = add_invoice(client)
-
+        report = add_report()
+        report.invoices.add(invoice)
         #invoiceItem = add_invoice_item(product, invoice)
         for n in range(3):
             invoiceItem = add_invoice_item(product, invoice)
+
         index += 1
 
 if __name__ == '__main__':
     print("populating data")
-    populate(50)
-    print("populating complete")
+    populate(20)
+    add_admin_user()
+print("populating complete")

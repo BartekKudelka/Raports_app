@@ -1,10 +1,5 @@
 from django.test import TestCase
-from .models import Report
-from django.urls import reverse
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import generic
 from django.contrib.auth.models import User
-from django.contrib.auth import login as auth_login, authenticate
 
 
 class ViewsTest(TestCase):

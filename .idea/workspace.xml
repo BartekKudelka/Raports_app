@@ -89,7 +89,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
@@ -263,10 +263,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="86" />
-    <option name="y" value="3" />
+    <option name="x" value="21" />
+    <option name="y" value="74" />
     <option name="width" value="1782" />
-    <option name="height" value="1047" />
+    <option name="height" value="890" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -382,11 +382,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="987" y="136" width="1782" height="879" extended-state="0" />
-    <editor active="true" />
+    <frame x="21" y="74" width="1782" height="890" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7706767" visible="true" weight="0.15737514" />
-      <window_info id="Structure" order="1" sideWeight="0.22932331" side_tool="true" visible="true" weight="0.15737514" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77163905" visible="true" weight="0.15737514" />
+      <window_info id="Structure" order="1" sideWeight="0.22836095" side_tool="true" visible="true" weight="0.15737514" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49938875" weight="0.32922733" />
@@ -399,7 +398,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.4983165" weight="0.3298611" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061125" side_tool="true" weight="0.32922733" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5153846" visible="true" weight="0.28686327" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.5153846" visible="true" weight="0.28269485" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.506734" weight="0.32874617" />
       <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.5342298" weight="0.32026875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />

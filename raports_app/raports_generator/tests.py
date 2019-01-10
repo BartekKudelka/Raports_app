@@ -1,11 +1,7 @@
 from django.test import TestCase
-from django.contrib.auth.models import User
 
 
 class ViewsTest(TestCase):
-
-    def setUp(self):
-        user = User.objects.create_user('temporary', 'temporary@gmail.com', 'temporary')
 
     def test_report_nopermision(self):
         response = self.client.get('/raports_generator/reports/', follow=True)

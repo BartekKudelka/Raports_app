@@ -72,19 +72,30 @@ def add_client():
 
 def populate(N=50):
     index = 0
+
+    products = [
+        'sugar', 'eggs', 'yoghurt', 'margarine', 'butter', 'flour', 'milk', 'oil', 'baking powder', 'rice',
+        'cheese', 'mild cheese', 'full fat cheese', 'cream cheese', 'cream', 'fat', 'egg yolk', 'sparkling',
+        'mineral water', 'drink', 'chips', 'broth', 'soup', 'scrambled eggs', 'boiled eggs', 'fried eggs',
+        'sausage', 'apple', 'pear', 'peach', 'omelette', 'brad', 'croissant', 'roll', 'donut', 'oats', 'groats',
+        'pasta', 'perogies', 'noodles', 'olive oil', 'pork', 'beef', 'veal', 'lamb', 'rabbit', 'chicken', 'duck',
+        'liver', 'turkey'
+    ]
+
     for entry in range(N):
         product = add_product(index)
         client = add_client()
-        # report = add_report()
+        report = add_report()
 
         invoice = add_invoice(client)
-        report = add_report()
-        report.invoices.add(invoice)
-        #invoiceItem = add_invoice_item(product, invoice)
+
         for n in range(3):
-            invoiceItem = add_invoice_item(product, invoice)
+            report.invoices.add(invoice)
+            invoiceItem = add_invoice_item(products[n], invoice)
 
         index += 1
+    report.invoices.add(invoice)
+
 
 if __name__ == '__main__':
     print("populating data")

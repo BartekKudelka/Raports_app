@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout
 
 from . import views
+
 from raports_generator import views as report_views
 
 urlpatterns = [

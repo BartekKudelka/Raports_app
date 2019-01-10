@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login/')
 def reports(request):
-    reports = Report.objects.all().order_by('-start_date')
+    reports = Report.objects.all().order_by('-id')
     return render(request, 'reports.html', {'reports': reports})
 
 

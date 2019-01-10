@@ -70,9 +70,8 @@ def add_client():
     c.save()
     return c
 
-def populate(N=50):
-    index = 0
 
+def create_product(index):
     products = [
         'sugar', 'eggs', 'yoghurt', 'margarine', 'butter', 'flour', 'milk', 'oil', 'baking powder', 'rice',
         'cheese', 'mild cheese', 'full fat cheese', 'cream cheese', 'cream', 'fat', 'egg yolk', 'sparkling',
@@ -81,20 +80,28 @@ def populate(N=50):
         'pasta', 'perogies', 'noodles', 'olive oil', 'pork', 'beef', 'veal', 'lamb', 'rabbit', 'chicken', 'duck',
         'liver', 'turkey'
     ]
+    p = Product.objects.get_or_create(name=products[index])[0]
+
+    return p
+
+
+def populate(N=15):
+    index = 0
+    num_of_elems = 3
 
     for entry in range(N):
-        product = add_product(index)
         client = add_client()
-        report = add_report()
 
-        invoice = add_invoice(client)
+        product = add_product(index)
 
-        for n in range(3):
-            report.invoices.add(invoice)
-            invoiceItem = add_invoice_item(products[n], invoice)
+        for m in range(num_of_elems):
+            invoice = add_invoice(client)
+            for n in range(num_of_elems):
+                product = create_product(n)
+                invoiceItem = add_invoice_item(product, invoice)
 
         index += 1
-    report.invoices.add(invoice)
+
 
 
 if __name__ == '__main__':

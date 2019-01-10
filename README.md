@@ -5,7 +5,7 @@
     python manage.py makemigrations
     python manage.py migrate
     
-####Generating faker data
+#### Generating faker data
     python reports_faker.py
 
 #### Running tests
@@ -25,7 +25,7 @@ Docker case:
     docker-compose run web python manage.py makemigrations
     docker-compose run web python manage.py migrate
     
-## Generating faker data
+#### Generating faker data
     docker-compose run web python reports_faker.py
     
 #### Running tests
